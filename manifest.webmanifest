@@ -1,0 +1,14 @@
+{
+  "name": "九 · 个人工作台",
+  "short_name": "九",
+  "description": "新媒体运营监测 / 思路喷泉选题 / 作品复盘 / 好习惯打卡",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f5fb",
+  "theme_color": "#5b54e6",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

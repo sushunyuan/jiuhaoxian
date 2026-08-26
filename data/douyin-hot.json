@@ -1,0 +1,261 @@
+{
+  "updated": "2026-08-24T05:22:59.914Z",
+  "source": "hotdata.aipromptnav.com 抖音热搜榜（每小时更新）",
+  "douyin": [
+    {
+      "id": "d0",
+      "t": "认识一座城从老字号招牌开始",
+      "heat": "1140万",
+      "track": "泛生活",
+      "link": "https://www.bing.com/search?q=%E8%AE%A4%E8%AF%86%E4%B8%80%E5%BA%A7%E5%9F%8E%E4%BB%8E%E8%80%81%E5%AD%97%E5%8F%B7%E6%8B%9B%E7%89%8C%E5%BC%80%E5%A7%8B%20%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        969,
+        1035,
+        1101,
+        1167,
+        1233,
+        1300,
+        1366
+      ]
+    },
+    {
+      "id": "d1",
+      "t": "总有人在付出为什么不能是我呢",
+      "heat": "1126万",
+      "track": "心理学",
+      "link": "https://www.bing.com/search?q=%E6%80%BB%E6%9C%89%E4%BA%BA%E5%9C%A8%E4%BB%98%E5%87%BA%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E6%98%AF%E6%88%91%E5%91%A2%20%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        957,
+        1022,
+        1088,
+        1153,
+        1218,
+        1284,
+        1349
+      ]
+    },
+    {
+      "id": "d2",
+      "t": "一组数据看数智赋能电商经济",
+      "heat": "1110万",
+      "track": "新闻政策",
+      "link": "https://www.bing.com/search?q=%E4%B8%80%E7%BB%84%E6%95%B0%E6%8D%AE%E7%9C%8B%E6%95%B0%E6%99%BA%E8%B5%8B%E8%83%BD%E7%94%B5%E5%95%86%E7%BB%8F%E6%B5%8E%20%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        944,
+        1008,
+        1072,
+        1137,
+        1201,
+        1265,
+        1330
+      ]
+    },
+    {
+      "id": "d3",
+      "t": "中国U18男篮亚洲杯挺进半决赛",
+      "heat": "1110万",
+      "track": "体育行业",
+      "link": "https://www.bing.com/search?q=%E4%B8%AD%E5%9B%BDU18%E7%94%B7%E7%AF%AE%E4%BA%9A%E6%B4%B2%E6%9D%AF%E6%8C%BA%E8%BF%9B%E5%8D%8A%E5%86%B3%E8%B5%9B%20%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        944,
+        1008,
+        1072,
+        1137,
+        1201,
+        1265,
+        1330
+      ]
+    },
+    {
+      "id": "d4",
+      "t": "2026成都车展正式开幕",
+      "heat": "1054万",
+      "track": "数码行业",
+      "link": "https://www.bing.com/search?q=2026%E6%88%90%E9%83%BD%E8%BD%A6%E5%B1%95%E6%AD%A3%E5%BC%8F%E5%BC%80%E5%B9%95%20%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        896,
+        957,
+        1018,
+        1079,
+        1140,
+        1202,
+        1263
+      ]
+    },
+    {
+      "id": "d5",
+      "t": "运油20A歼16等已全部抵达埃及",
+      "heat": "1039万",
+      "track": "新闻政策",
+      "link": "https://www.bing.com/search?q=%E8%BF%90%E6%B2%B920A%E6%AD%BC16%E7%AD%89%E5%B7%B2%E5%85%A8%E9%83%A8%E6%8A%B5%E8%BE%BE%E5%9F%83%E5%8F%8A%20%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        883,
+        943,
+        1004,
+        1064,
+        1124,
+        1184,
+        1245
+      ]
+    },
+    {
+      "id": "d6",
+      "t": "国际金价重回4600美元",
+      "heat": "928万",
+      "track": "新闻政策",
+      "link": "https://www.bing.com/search?q=%E5%9B%BD%E9%99%85%E9%87%91%E4%BB%B7%E9%87%8D%E5%9B%9E4600%E7%BE%8E%E5%85%83%20%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        789,
+        843,
+        896,
+        950,
+        1004,
+        1058,
+        1112
+      ]
+    },
+    {
+      "id": "d7",
+      "t": "EDG官宣选手stew正式加盟",
+      "heat": "924万",
+      "track": "体育行业",
+      "link": "https://www.bing.com/search?q=EDG%E5%AE%98%E5%AE%A3%E9%80%89%E6%89%8Bstew%E6%AD%A3%E5%BC%8F%E5%8A%A0%E7%9B%9F%20%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        785,
+        839,
+        893,
+        946,
+        1000,
+        1053,
+        1107
+      ]
+    },
+    {
+      "id": "d8",
+      "t": "真正的少女心事是环游世界",
+      "heat": "916万",
+      "track": "心理学",
+      "link": "https://www.bing.com/search?q=%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%B0%91%E5%A5%B3%E5%BF%83%E4%BA%8B%E6%98%AF%E7%8E%AF%E6%B8%B8%E4%B8%96%E7%95%8C%20%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        779,
+        832,
+        885,
+        938,
+        991,
+        1044,
+        1097
+      ]
+    },
+    {
+      "id": "d9",
+      "t": "手指的方向是自由",
+      "heat": "915万",
+      "track": "心理学",
+      "link": "https://www.bing.com/search?q=%E6%89%8B%E6%8C%87%E7%9A%84%E6%96%B9%E5%90%91%E6%98%AF%E8%87%AA%E7%94%B1%20%E6%8A%96%E9%9F%B3",
+      "up": false,
+      "trend": [
+        1052,
+        1014,
+        975,
+        937,
+        899,
+        860,
+        822
+      ]
+    },
+    {
+      "id": "d10",
+      "t": "多家车企启动召回",
+      "heat": "912万",
+      "track": "数码行业",
+      "link": "https://www.bing.com/search?q=%E5%A4%9A%E5%AE%B6%E8%BD%A6%E4%BC%81%E5%90%AF%E5%8A%A8%E5%8F%AC%E5%9B%9E%20%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        775,
+        828,
+        881,
+        934,
+        987,
+        1040,
+        1093
+      ]
+    },
+    {
+      "id": "d11",
+      "t": "李瑞王明昊101:99绝杀追梦格林",
+      "heat": "911万",
+      "track": "体育行业",
+      "link": "https://www.bing.com/search?q=%E6%9D%8E%E7%91%9E%E7%8E%8B%E6%98%8E%E6%98%8A101%3A99%E7%BB%9D%E6%9D%80%E8%BF%BD%E6%A2%A6%E6%A0%BC%E6%9E%97%20%E6%8A%96%E9%9F%B3",
+      "up": false,
+      "trend": [
+        1048,
+        1009,
+        971,
+        933,
+        895,
+        856,
+        818
+      ]
+    },
+    {
+      "id": "d12",
+      "t": "快递员被罚100元后轻生不实",
+      "heat": "910万",
+      "track": "新闻政策",
+      "link": "https://www.bing.com/search?q=%E5%BF%AB%E9%80%92%E5%91%98%E8%A2%AB%E7%BD%9A100%E5%85%83%E5%90%8E%E8%BD%BB%E7%94%9F%E4%B8%8D%E5%AE%9E%20%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        774,
+        826,
+        879,
+        932,
+        985,
+        1037,
+        1090
+      ]
+    },
+    {
+      "id": "d13",
+      "t": "我要生气啦",
+      "heat": "905万",
+      "track": "泛生活",
+      "link": "https://www.bing.com/search?q=%E6%88%91%E8%A6%81%E7%94%9F%E6%B0%94%E5%95%A6%20%E6%8A%96%E9%9F%B3",
+      "up": false,
+      "trend": [
+        1041,
+        1003,
+        965,
+        927,
+        889,
+        851,
+        813
+      ]
+    },
+    {
+      "id": "d14",
+      "t": "说唱巅峰嘉宾帮唱赛抢先看",
+      "heat": "864万",
+      "track": "泛生活",
+      "link": "https://www.bing.com/search?q=%E8%AF%B4%E5%94%B1%E5%B7%85%E5%B3%B0%E5%98%89%E5%AE%BE%E5%B8%AE%E5%94%B1%E8%B5%9B%E6%8A%A2%E5%85%88%E7%9C%8B%20%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        734,
+        785,
+        835,
+        885,
+        935,
+        985,
+        1035
+      ]
+    }
+  ]
+}

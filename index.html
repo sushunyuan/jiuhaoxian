@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+<meta name="theme-color" content="#5b54e6" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="九·工作台" />
+<title>九 · 个人工作台</title>
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="icon.svg" />
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="app">
+  <!-- 顶部栏 -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-logo">九</div>
+      <div class="brand-text">
+        <div class="brand-name">九 · 工作台</div>
+        <div class="brand-sub" id="brandSub">本地优先 · 自动保存</div>
+      </div>
+    </div>
+    <button class="sync-pill" id="saveState" title="数据已自动保存">● 已保存</button>
+  </header>
+
+  <!-- 主内容区 -->
+  <main id="view" class="view"></main>
+
+  <!-- 底部导航（移动端）/ 侧边（桌面端由CSS控制） -->
+  <nav class="tabbar" id="tabbar">
+    <button class="tab" data-view="ops"><span class="tab-ico">📊</span><span>新媒体运营</span></button>
+    <button class="tab" data-view="idea"><span class="tab-ico">💡</span><span>思路喷泉</span></button>
+    <button class="tab" data-view="review"><span class="tab-ico">🔍</span><span>九这样盘</span></button>
+    <button class="tab" data-view="habit"><span class="tab-ico">✅</span><span>好习惯</span></button>
+    <button class="tab" data-view="more"><span class="tab-ico">⚙️</span><span>设置</span></button>
+  </nav>
+</div>
+
+<!-- 通用弹窗容器 -->
+<div id="modalRoot" class="modal-root hidden"></div>
+<!-- 轻提示 -->
+<div id="toast" class="toast hidden"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
