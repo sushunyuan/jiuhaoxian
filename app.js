@@ -35,17 +35,17 @@ const DOUYIN_SEED = [
   {id:"d14", t:"说唱巅峰嘉宾帮唱赛抢先看", heat:"864万", track:"泛生活", link:"https://www.bing.com/search?q=%E8%AF%B4%E5%94%B1%E5%B7%85%E5%B3%B0%E5%98%89%E5%AE%BE%E5%B8%AE%E5%94%B1%E8%B5%9B%E6%8A%A2%E5%85%88%E7%9C%8B%20%E6%8A%96%E9%9F%B3", up:true, trend:[734,785,835,885,935,985,1035]}
 ];
 const XHS_SEED = [
-  {t:"小红书上线跨境平台Redshop", heat:"320万", track:"新闻政策", link:"https://www.xiaohongshu.com/search_result?keyword=Redshop"},
-  {t:"AI宠物陪伴机器人种草", heat:"980万", track:"数码行业", link:"https://www.xiaohongshu.com/search_result?keyword=AI宠物"},
-  {t:"精细护理·头皮养护成新风口", heat:"760万", track:"泛生活", link:"https://www.xiaohongshu.com/search_result?keyword=头皮养护"},
-  {t:"帕斯蒂尔风妆容刷屏", heat:"540万", track:"泛生活", link:"https://www.xiaohongshu.com/search_result?keyword=帕斯蒂尔风"},
-  {t:"「经济上行的美」情绪妆", heat:"430万", track:"心理学", link:"https://www.xiaohongshu.com/search_result?keyword=经济上行的美"},
-  {t:"洞洞鞋夏日穿搭", heat:"410万", track:"泛生活", link:"https://www.xiaohongshu.com/search_result?keyword=洞洞鞋穿搭"},
-  {t:"水泥麻辣烫探店笔记", heat:"690万", track:"泛生活", link:"https://www.xiaohongshu.com/search_result?keyword=水泥麻辣烫探店"},
-  {t:"小红书申请REDcafé商标", heat:"260万", track:"新闻政策", link:"https://www.xiaohongshu.com/search_result?keyword=REDcafé"},
-  {t:"自媒体起号方法论合集", heat:"880万", track:"做自媒体", link:"https://www.xiaohongshu.com/search_result?keyword=自媒体起号"},
-  {t:"运动训练计划模板", heat:"470万", track:"体育行业", link:"https://www.xiaohongshu.com/search_result?keyword=运动训练计划"}
-].map((x,i)=>({id:"x"+i, ...x, up:true, trend:seedTrend(55+i*4, i%2?-1:1)}));
+  {t:"小红书上线跨境平台Redshop", heat:"320万", track:"新闻政策"},
+  {t:"AI宠物陪伴机器人种草", heat:"980万", track:"数码行业"},
+  {t:"精细护理·头皮养护成新风口", heat:"760万", track:"泛生活"},
+  {t:"帕斯蒂尔风妆容刷屏", heat:"540万", track:"泛生活"},
+  {t:"「经济上行的美」情绪妆", heat:"430万", track:"心理学"},
+  {t:"洞洞鞋夏日穿搭", heat:"410万", track:"泛生活"},
+  {t:"水泥麻辣烫探店笔记", heat:"690万", track:"泛生活"},
+  {t:"小红书申请REDcafé商标", heat:"260万", track:"新闻政策"},
+  {t:"自媒体起号方法论合集", heat:"880万", track:"做自媒体"},
+  {t:"运动训练计划模板", heat:"470万", track:"体育行业"}
+].map((x,i)=>({id:"x"+i, ...x, link:"https://www.bing.com/search?q="+encodeURIComponent(x.t)+"%20小红书", up:true, trend:seedTrend(55+i*4, i%2?-1:1)}));
 
 const DEFAULT = {
   accounts: [],
@@ -297,7 +297,7 @@ function renderIdea(root){
   const trackNames = {digital:"数码行业",psychology:"心理学",media:"做自媒体",sports:"体育行业",policy:"新闻政策"};
   let html = `<div class="card">
     <h3>💡 思路喷泉 <span class="tag">爆款元素库 · 热点追踪 · AI选题</span></h3>
-    <div class="note">本区帮你解决「灵感枯竭 / 选题困难」。热点榜为内置实时快照，可在「设置」接入后端做真·实时抓取；AI 选题在填了 API Key 后变为真·对话。</div>
+    <div class="note">本区帮你解决「灵感枯竭 / 选题困难」。热点榜已接入 GitHub+jsDelivr，每天 12:00 自动更新（断网时回退内置快照）；AI 选题在填了 API Key 后变为真·对话。</div>
     <div class="section-title">五大赛道 · 爆款元素库</div>
     <div class="chips" id="trackChips">
       ${Object.keys(trackNames).map(k=>`<button class="chip ${k===ideaTrack?'active':''}" data-t="${k}">${trackNames[k]}</button>`).join("")}
@@ -309,8 +309,7 @@ function renderIdea(root){
   // 热点
   html += `<div class="card">
     <div style="display:flex;align-items:center;justify-content:space-between">
-      <h3 style="margin:0">🔥 平台热点榜 <span class="tag">小红书实时抓取</span></h3>
-      <button class="btn soft sm" id="refresh">↻ 刷新</button>
+      <h3 style="margin:0">🔥 平台热点榜 <span class="tag">抖音/小红书每日自动更新</span></h3>
     </div>
     <div class="muted" style="margin-top:6px">小红书热榜更新于：${state.hotUpdated ? state.hotUpdated.replace("T"," ").slice(0,16) : "（本地快照）"}</div>
     <div class="split" style="margin-top:12px">
@@ -330,13 +329,6 @@ function renderIdea(root){
       <button class="btn block" id="ok">添加</button>`,
       s=>{ s.querySelector("#ok").onclick=()=>{ const nm=s.querySelector("#nm").value.trim(); if(!nm){showToast("请填写");return;}
         state.tracks[s.querySelector("#tk").value].push(nm); touch(); closeModal(); renderIdea($("#view")); }; });
-  };
-  $("#refresh").onclick=()=>{
-    ["douyin","xhs"].forEach(p=> state.hot[p].forEach(h=>{
-      h.heat = (Math.round((parseFloat(h.heat)*10000)*(0.9+Math.random()*0.2))/10000).toFixed(0)+"万";
-      h.trend = h.trend.map(v=>Math.max(10,Math.round(v*(0.9+Math.random()*0.25))));
-    }));
-    touch(); renderHotList("douyin"); renderHotList("xhs"); showToast("已模拟刷新（接后端可真·实时）");
   };
 }
 function renderLib(){
@@ -699,7 +691,7 @@ function renderMore(root){
   </div>
   <div class="card">
     <h3>🔥 热点数据源（在线自动更新）</h3>
-    <div class="muted">留空 = 用本地内置快照。填「基础 URL」后，工作台启动会自动拉取最新热点，<b>线上版也能每天更新</b>。格式如：<code>https://cdn.jsdelivr.net/gh/你的用户名/仓库名</code>（会自动拼接 /douyin-hot.json、/xhs-hot.json）。</div>
+    <div class="muted">已内置默认数据源（你的 GitHub 仓库，经 jsDelivr 分发），<b>留空即可每天自动更新</b>，线上/本地/手机打开都读同一份最新热点。如需自定义可填写，格式如：<code>https://cdn.jsdelivr.net/gh/用户名/仓库名/data</code>。</div>
     <div class="field"><label>热点基础 URL</label><input id="hub" placeholder="https://cdn.jsdelivr.net/gh/user/repo" value="${esc(state.hotBaseUrl||"")}"/></div>
     <button class="btn block" id="saveHub">保存数据源</button>
     <div style="display:flex;gap:10px;margin-top:10px;align-items:center">
@@ -758,7 +750,9 @@ function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;",
 
 /* ---------- 热点数据：在线数据源优先，本地 data/ 兜底 ---------- */
 async function applyRemoteHot(){
-  const base = (state.hotBaseUrl||"").trim().replace(/\/$/,"");
+  // 默认数据源：用户的 GitHub 仓库（经 jsDelivr 分发，支持跨域）。设置页留空即走默认，无需手动填。
+  const HOT_DEFAULT_BASE = "https://cdn.jsdelivr.net/gh/sushunyuan/jiuhaoxian@master/data";
+  const base = (state.hotBaseUrl||"").trim() ? (state.hotBaseUrl||"").trim().replace(/\/$/,"") : HOT_DEFAULT_BASE.replace(/\/$/,"");
   if(base){
     let ok=false;
     try{
