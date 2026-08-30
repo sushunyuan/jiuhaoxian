@@ -87,10 +87,11 @@ function save(){
   try{
     localStorage.setItem(LS_KEY, JSON.stringify(state));
     const pill = $("#saveState");
-    pill.textContent = "● 已保存"; pill.className = "sync-pill";
+    if(pill){ pill.textContent = "● 已保存"; pill.className = "sync-pill"; }
+    sbSave();
   }catch(e){ showToast("保存失败："+e.message); }
 }
-function touch(){ const pill=$("#saveState"); pill.textContent="● 保存中…"; pill.className="sync-pill dirty"; clearTimeout(saveTimer); saveTimer=setTimeout(save,400); }
+function touch(){ const pill=$("#saveState"); if(pill){ pill.textContent="● 保存中…"; pill.className="sync-pill dirty"; } clearTimeout(saveTimer); saveTimer=setTimeout(save,400); }
 
 /* ---------- UI 小工具 ---------- */
 function showToast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.remove("hidden"); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.add("hidden"),2200); }
@@ -690,6 +691,22 @@ function renderMore(root){
     </div>
   </div>
   <div class="card">
+    <h3>☁️ 云端同步（Supabase · 免费）</h3>
+    <div class="muted" id="sbStatus">未登录 · 数据仅存本机。</div>
+    <div id="sbForm">
+      <div class="field"><label>邮箱（手机/电脑用同一个）</label><input id="sbEmail" type="email" placeholder="you@example.com" value="${esc(localStorage.getItem('sb_email')||'')}"/></div>
+      <div class="field"><label>密码（至少6位）</label><input id="sbPw" type="password" placeholder="••••••"/></div>
+      <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+        <button class="btn block" id="sbLogin">登录</button>
+        <button class="btn soft" id="sbReg">注册</button>
+      </div>
+      <div class="muted" style="margin-top:8px">首次用：填邮箱密码点「注册」，再用同一邮箱「登录」。手机和电脑登录同一邮箱即自动同步。</div>
+    </div>
+    <div id="sbLoggedIn" style="display:none">
+      <button class="btn danger" id="sbLogout">退出登录（数据仍留本机）</button>
+    </div>
+  </div>
+  <div class="card">
     <h3>🔥 热点数据源（在线自动更新）</h3>
     <div class="muted">已内置默认数据源（你的 GitHub 仓库，经 jsDelivr 分发），<b>留空即可每天自动更新</b>，线上/本地/手机打开都读同一份最新热点。如需自定义可填写，格式如：<code>https://cdn.jsdelivr.net/gh/用户名/仓库名/data</code>。</div>
     <div class="field"><label>热点基础 URL</label><input id="hub" placeholder="https://cdn.jsdelivr.net/gh/user/repo" value="${esc(state.hotBaseUrl||"")}"/></div>
@@ -743,6 +760,10 @@ function renderMore(root){
   $("#imp").onclick=()=> $("#file").click();
   $("#file").onchange=e=>{ const f=e.target.files[0]; if(!f) return; const r=new FileReader(); r.onload=()=>{ try{ const d=JSON.parse(r.result); Object.assign(state,d); touch(); showToast("已导入，正在刷新"); render(); }catch(err){ showToast("文件格式错误"); } }; r.readAsText(f); };
   $("#clear").onclick=()=>{ askConfirm("确定清空全部数据？建议先导出备份。", ()=>{ localStorage.removeItem(LS_KEY); state=JSON.parse(JSON.stringify(DEFAULT)); touch(); render(); showToast("已清空"); }); };
+  paintSb();
+  $("#sbLogin").onclick=async()=>{ const email=$("#sbEmail").value.trim(), pw=$("#sbPw").value; if(!email||!pw){showToast("请填邮箱和密码");return;} showToast("登录中…"); const r=await sbSignIn(email,pw); if(r.ok){ paintSb(); showToast("登录成功，正在同步"); sbPull(); } else showToast("登录失败："+(r.msg||"")); };
+  $("#sbReg").onclick=async()=>{ const email=$("#sbEmail").value.trim(), pw=$("#sbPw").value; if(!email||!pw){showToast("请填邮箱和密码");return;} if(pw.length<6){showToast("密码至少6位");return;} showToast("注册中…"); const r=await sbSignUp(email,pw); if(r.ok){ paintSb(); showToast("注册成功，正在同步"); sbPull(); } else if(r.needConfirm){ showToast("注册成功，请去邮箱确认后登录"); } else showToast("注册失败："+(r.msg||"")); };
+  $("#sbLogout").onclick=()=>{ sbSignOut(); paintSb(); showToast("已退出，数据仅留本机"); };
 }
 
 /* ---------- 工具 ---------- */
@@ -781,9 +802,118 @@ async function applyRemoteHot(){
   if(curView==="idea") render();
 }
 
+/* ---------- 云端同步（Supabase · 免费 · 零后端） ---------- */
+const SB = {
+  url: "https://swdtzryyqwmnzerpnhao.supabase.co",
+  anon: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN3ZHR6cnl5cXdtbnplcnBuaGFvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgwOTUyOTQsImV4cCI6MjEwMzY3MTI5NH0.7gon80G5777OJj-MUuTtRHUVVaXSJ4uCn5zk4Bunvcs"
+};
+function sbH(extra){ return Object.assign({"apikey":SB.anon,"Content-Type":"application/json"}, extra||{}); }
+function sbLoggedIn(){ return !!localStorage.getItem("sb_token"); }
+function sbSetSession(j){
+  if(!j||!j.user) return;
+  localStorage.setItem("sb_token", j.access_token);
+  localStorage.setItem("sb_refresh", j.refresh_token||"");
+  localStorage.setItem("sb_uid", j.user.id);
+  localStorage.setItem("sb_email", j.user.email||"");
+}
+function sbSignOut(){ ["sb_token","sb_refresh","sb_uid","sb_email"].forEach(k=>localStorage.removeItem(k)); }
+async function sbRefresh(){
+  const rt = localStorage.getItem("sb_refresh"); if(!rt) return false;
+  try{
+    const r = await fetch(SB.url+"/auth/v1/token?grant_type=refresh_token", {method:"POST", headers:sbH(), body:JSON.stringify({refresh_token:rt})});
+    if(!r.ok) return false;
+    const j = await r.json();
+    localStorage.setItem("sb_token", j.access_token);
+    localStorage.setItem("sb_refresh", j.refresh_token||rt);
+    if(j.user && j.user.id) localStorage.setItem("sb_uid", j.user.id);
+    return true;
+  }catch(e){ return false; }
+}
+async function sbApi(path, opts){
+  opts = opts||{}; opts.headers = sbH({"Authorization":"Bearer "+localStorage.getItem("sb_token")});
+  let r = await fetch(SB.url+path, opts);
+  if(r.status===401 && await sbRefresh()){
+    opts.headers = sbH({"Authorization":"Bearer "+localStorage.getItem("sb_token")});
+    r = await fetch(SB.url+path, opts);
+  }
+  return r;
+}
+async function sbSignUp(email, pw){
+  const r = await fetch(SB.url+"/auth/v1/signup", {method:"POST", headers:sbH(), body:JSON.stringify({email, password:pw})});
+  const j = await r.json().catch(()=>({}));
+  if(j.access_token){ sbSetSession(j); return {ok:true}; }
+  if(j.user && j.user.id && !j.access_token) return {ok:false, needConfirm:true};
+  if(j.error_description||j.msg) return {ok:false, msg:j.error_description||j.msg};
+  if(j.message) return {ok:false, msg:j.message};
+  return {ok:false, msg:"注册失败"};
+}
+async function sbSignIn(email, pw){
+  const r = await fetch(SB.url+"/auth/v1/token?grant_type=password", {method:"POST", headers:sbH(), body:JSON.stringify({email, password:pw})});
+  const j = await r.json().catch(()=>({}));
+  if(j.access_token){ sbSetSession(j); return {ok:true}; }
+  if(j.error_description||j.error) return {ok:false, msg:j.error_description||j.error};
+  return {ok:false, msg:"登录失败"};
+}
+function mergeState(incoming){
+  if(!incoming || typeof incoming!=="object") return;
+  const clean = Object.assign({}, incoming);
+  delete clean.hot; delete clean.hotUpdated; // hot 是引用数据，不跨设备同步
+  state = Object.assign(state, clean);
+  state.tracks = Object.assign({}, DEFAULT.tracks, state.tracks||{});
+  state.hot = Object.assign({}, DEFAULT.hot, state.hot||{});
+  state.diary = state.diary||{};
+}
+let sbReady=false, sbPushTimer;
+function sbSave(){
+  if(!sbReady || !sbLoggedIn()) return;
+  clearTimeout(sbPushTimer);
+  sbPushTimer = setTimeout(sbPush, 1200);
+}
+async function sbPush(){
+  if(!sbLoggedIn()) return;
+  const uid = localStorage.getItem("sb_uid"); if(!uid) return;
+  const payload = Object.assign({}, state);
+  delete payload.hot; delete payload.hotUpdated;
+  try{
+    const r = await sbApi(`/rest/v1/workbench?on_conflict=user_id`, {
+      method:"POST",
+      headers:{"Prefer":"resolution=merge-duplicates"},
+      body: JSON.stringify({user_id:uid, data:payload, updated_at:new Date().toISOString()})
+    });
+    const pill=$("#saveState");
+    if(pill){ pill.textContent = r.ok ? "☁ 已同步云端" : "⚠ 同步失败"; pill.className = "sync-pill"+(r.ok?"":" dirty"); }
+  }catch(e){}
+}
+async function sbPull(){
+  if(!sbLoggedIn()) return;
+  const uid = localStorage.getItem("sb_uid"); if(!uid) return;
+  try{
+    const r = await sbApi(`/rest/v1/workbench?user_id=eq.${uid}&select=data,updated_at`);
+    if(!r.ok) return;
+    const rows = await r.json();
+    if(rows && rows[0] && rows[0].data){
+      mergeState(rows[0].data);
+      save(); render();
+      showToast("已从云端同步：" + (rows[0].updated_at||"").slice(0,16));
+    }
+  }catch(e){}
+}
+function paintSb(){
+  const st=$("#sbStatus"), f=$("#sbForm"), lo=$("#sbLoggedIn"); if(!st) return;
+  if(sbLoggedIn()){
+    st.textContent="✅ 已登录："+(localStorage.getItem("sb_email")||"")+" · 数据自动同步云端";
+    st.style.color="#2a9"; f.style.display="none"; lo.style.display="block";
+  }else{
+    st.textContent="未登录 · 数据仅存本机。登录后用同一邮箱，手机/电脑自动同步。";
+    st.style.color=""; f.style.display="block"; lo.style.display="none";
+  }
+}
+
 /* ---------- 启动 ---------- */
 function init(){
   load();
+  if(sbLoggedIn()){ sbPull().finally(()=>{ sbReady=true; }); }
+  else { sbReady=true; }
   applyRemoteHot();
   document.querySelectorAll(".tab").forEach(t=> t.onclick=()=> go(t.dataset.view));
   if("serviceWorker" in navigator){
