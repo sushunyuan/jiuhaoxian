@@ -708,7 +708,7 @@ function renderMore(root){
   </div>
   <div class="card">
     <h3>🔥 热点数据源（在线自动更新）</h3>
-    <div class="muted">已内置默认数据源（你的 GitHub 仓库，经 jsDelivr 分发），<b>留空即可每天自动更新</b>，线上/本地/手机打开都读同一份最新热点。如需自定义可填写，格式如：<code>https://cdn.jsdelivr.net/gh/用户名/仓库名/data</code>。</div>
+    <div class="muted">已内置默认数据源（你的 GitHub 仓库，优先 GitHub Pages、jsDelivr 兜底），<b>留空即可每天自动更新</b>，线上/本地/手机打开都读同一份最新热点。如需自定义可填写，格式如：<code>https://用户名.github.io/仓库名/data</code>。</div>
     <div class="field"><label>热点基础 URL</label><input id="hub" placeholder="https://cdn.jsdelivr.net/gh/user/repo" value="${esc(state.hotBaseUrl||"")}"/></div>
     <button class="btn block" id="saveHub">保存数据源</button>
     <div style="display:flex;gap:10px;margin-top:10px;align-items:center">
@@ -771,30 +771,43 @@ function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;",
 
 /* ---------- 热点数据：在线数据源优先，本地 data/ 兜底 ---------- */
 async function applyRemoteHot(){
-  // 默认数据源：用户的 GitHub 仓库（经 jsDelivr 分发，支持跨域）。设置页留空即走默认，无需手动填。
-  const HOT_DEFAULT_BASE = "https://cdn.jsdelivr.net/gh/sushunyuan/jiuhaoxian@master/data";
-  const base = (state.hotBaseUrl||"").trim() ? (state.hotBaseUrl||"").trim().replace(/\/$/,"") : HOT_DEFAULT_BASE.replace(/\/$/,"");
-  if(base){
-    let ok=false;
+  // 默认数据源按顺序尝试：
+  // 1) GitHub Pages —— 边缘缓存仅 600 秒，热点推送后几分钟内就能读到新数据（首选）
+  // 2) jsDelivr @master —— 边缘缓存 s-maxage=43200（12 小时），purge 常不生效，只作兜底
+  const HOT_DEFAULTS = [
+    "https://sushunyuan.github.io/jiuhaoxian/data",
+    "https://cdn.jsdelivr.net/gh/sushunyuan/jiuhaoxian@master/data"
+  ];
+  const custom = (state.hotBaseUrl||"").trim().replace(/\/$/,"");
+  const bases = custom ? [custom].concat(HOT_DEFAULTS) : HOT_DEFAULTS;
+  const grab = async (base, file) => {
+    const c=new AbortController(); const t=setTimeout(()=>c.abort(),8000);
     try{
-      const c=new AbortController(); const t=setTimeout(()=>c.abort(),8000);
-      const r=await fetch(base+"/xhs-hot.json?t="+Date.now(),{cache:"no-store",signal:c.signal}); clearTimeout(t);
-      if(r.ok){ const d=await r.json(); if(Array.isArray(d.xhs)&&d.xhs.length){ state.hot.xhs=d.xhs; state.hotUpdated=d.updated||state.hotUpdated; ok=true; } }
-    }catch(e){}
-    try{
-      const c=new AbortController(); const t=setTimeout(()=>c.abort(),8000);
-      const r=await fetch(base+"/douyin-hot.json?t="+Date.now(),{cache:"no-store",signal:c.signal}); clearTimeout(t);
-      if(r.ok){ const d=await r.json(); if(Array.isArray(d.douyin)&&d.douyin.length){ state.hot.douyin=d.douyin; state.hotUpdated=d.updated||state.hotUpdated; ok=true; } }
-    }catch(e){}
-    if(ok){ save(); if(curView==="idea") render(); return; }
-    // 外部失败 → 回退本地
+      const r=await fetch(base+"/"+file+"?t="+Date.now(),{cache:"no-store",signal:c.signal});
+      clearTimeout(t);
+      if(!r.ok) return null;
+      return await r.json();
+    }catch(e){ clearTimeout(t); return null; }
+  };
+  let gotXhs=false, gotDy=false;
+  for(const base of bases){
+    if(!gotXhs){
+      const d=await grab(base,"xhs-hot.json");
+      if(d&&Array.isArray(d.xhs)&&d.xhs.length){ state.hot.xhs=d.xhs; state.hotUpdated=d.updated||state.hotUpdated; gotXhs=true; }
+    }
+    if(!gotDy){
+      const d=await grab(base,"douyin-hot.json");
+      if(d&&Array.isArray(d.douyin)&&d.douyin.length){ state.hot.douyin=d.douyin; state.hotUpdated=d.updated||state.hotUpdated; gotDy=true; }
+    }
+    if(gotXhs&&gotDy) break;
   }
-  // 本地兜底
-  try{
+  if(gotXhs&&gotDy){ save(); if(curView==="idea") render(); return; }
+  // 本地兜底（只补线上没拿到的部分）
+  if(!gotXhs) try{
     const r=await fetch("data/xhs-hot.json",{cache:"no-store"});
     if(r.ok){ const d=await r.json(); if(Array.isArray(d.xhs)&&d.xhs.length){ state.hot.xhs=d.xhs; state.hotUpdated=d.updated||state.hotUpdated; } }
   }catch(e){}
-  try{
+  if(!gotDy) try{
     const r=await fetch("data/douyin-hot.json",{cache:"no-store"});
     if(r.ok){ const d=await r.json(); if(Array.isArray(d.douyin)&&d.douyin.length){ state.hot.douyin=d.douyin; state.hotUpdated=d.updated||state.hotUpdated; } }
   }catch(e){}
