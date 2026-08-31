@@ -843,10 +843,14 @@ async function sbRefresh(){
   }catch(e){ return false; }
 }
 async function sbApi(path, opts){
-  opts = opts||{}; opts.headers = sbH({"Authorization":"Bearer "+localStorage.getItem("sb_token")});
+  opts = opts||{};
+  // 关键：合并而非覆盖 headers —— 调用方可能传 Prefer/Prefer Return 等 PostgREST 头
+  const base = sbH({"Authorization":"Bearer "+localStorage.getItem("sb_token")});
+  opts.headers = Object.assign({}, base, opts.headers||{});
   let r = await fetch(SB.url+path, opts);
   if(r.status===401 && await sbRefresh()){
-    opts.headers = sbH({"Authorization":"Bearer "+localStorage.getItem("sb_token")});
+    const base2 = sbH({"Authorization":"Bearer "+localStorage.getItem("sb_token")});
+    opts.headers = Object.assign({}, base2, opts.headers||{});
     r = await fetch(SB.url+path, opts);
   }
   return r;
@@ -894,8 +898,18 @@ async function sbPush(){
       body: JSON.stringify({user_id:uid, data:payload, updated_at:new Date().toISOString()})
     });
     const pill=$("#saveState");
-    if(pill){ pill.textContent = r.ok ? "☁ 已同步云端" : "⚠ 同步失败"; pill.className = "sync-pill"+(r.ok?"":" dirty"); }
-  }catch(e){}
+    if(pill){
+      if(r.ok){ pill.textContent = "☁ 已同步云端"; pill.className = "sync-pill"; }
+      else{
+        let m="HTTP "+r.status;
+        try{ const j=await r.clone().json(); if(j && j.message) m+=" · "+j.message; }catch(_){ }
+        pill.textContent = "⚠ 同步失败 · "+m; pill.className = "sync-pill dirty";
+      }
+    }
+  }catch(e){
+    const pill=$("#saveState");
+    if(pill){ pill.textContent = "⚠ 同步失败 · "+e.message; pill.className = "sync-pill dirty"; }
+  }
 }
 async function sbPull(){
   if(!sbLoggedIn()) return;
