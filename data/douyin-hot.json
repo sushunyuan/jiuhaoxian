@@ -1,64 +1,64 @@
 {
-  "updated": "2026-09-01T23:55:40.401677+08:00",
+  "updated": "2026-09-04T01:36:19.204294+08:00",
   "source": "每日自动化抓取（抖音热搜榜，Bing 搜索跳转）",
   "douyin": [
     {
       "id": "d0",
-      "t": "开学第一天",
-      "heat": "1091.6万",
-      "track": "泛生活",
-      "link": "https://www.bing.com/search?q=%E5%BC%80%E5%AD%A6%E7%AC%AC%E4%B8%80%E5%A4%A9+%E6%8A%96%E9%9F%B3",
+      "t": "外交部正告日本右翼势力",
+      "heat": "1183.2万",
+      "track": "新闻政策",
+      "link": "https://www.bing.com/search?q=%E5%A4%96%E4%BA%A4%E9%83%A8%E6%AD%A3%E5%91%8A%E6%97%A5%E6%9C%AC%E5%8F%B3%E7%BF%BC%E5%8A%BF%E5%8A%9B+%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        852,
+        907,
+        962,
+        1018,
+        1073,
+        1128,
+        1183
+      ]
+    },
+    {
+      "id": "d1",
+      "t": "等到了秋天我们再去散步好不好",
+      "heat": "1131.5万",
+      "track": "心理学",
+      "link": "https://www.bing.com/search?q=%E7%AD%89%E5%88%B0%E4%BA%86%E7%A7%8B%E5%A4%A9%E6%88%91%E4%BB%AC%E5%86%8D%E5%8E%BB%E6%95%A3%E6%AD%A5%E5%A5%BD%E4%B8%8D%E5%A5%BD+%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        815,
+        868,
+        921,
+        974,
+        1026,
+        1079,
+        1132
+      ]
+    },
+    {
+      "id": "d2",
+      "t": "促进中小企业发展十五五规划来了",
+      "heat": "1090.9万",
+      "track": "新闻政策",
+      "link": "https://www.bing.com/search?q=%E4%BF%83%E8%BF%9B%E4%B8%AD%E5%B0%8F%E4%BC%81%E4%B8%9A%E5%8F%91%E5%B1%95%E5%8D%81%E4%BA%94%E4%BA%94%E8%A7%84%E5%88%92%E6%9D%A5%E4%BA%86+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
         786,
         837,
         888,
-        939,
-        990,
-        1041,
-        1092
-      ]
-    },
-    {
-      "id": "d1",
-      "t": "多款手机正式涨价",
-      "heat": "1090.2万",
-      "track": "数码行业",
-      "link": "https://www.bing.com/search?q=%E5%A4%9A%E6%AC%BE%E6%89%8B%E6%9C%BA%E6%AD%A3%E5%BC%8F%E6%B6%A8%E4%BB%B7+%E6%8A%96%E9%9F%B3",
-      "up": true,
-      "trend": [
-        785,
-        836,
-        887,
         938,
-        988,
-        1039,
-        1090
-      ]
-    },
-    {
-      "id": "d2",
-      "t": "全力打通核心救援区的电力通道",
-      "heat": "1089.4万",
-      "track": "新闻政策",
-      "link": "https://www.bing.com/search?q=%E5%85%A8%E5%8A%9B%E6%89%93%E9%80%9A%E6%A0%B8%E5%BF%83%E6%95%91%E6%8F%B4%E5%8C%BA%E7%9A%84%E7%94%B5%E5%8A%9B%E9%80%9A%E9%81%93+%E6%8A%96%E9%9F%B3",
-      "up": true,
-      "trend": [
-        784,
-        835,
-        886,
-        936,
-        987,
-        1038,
-        1089
+        989,
+        1040,
+        1091
       ]
     },
     {
       "id": "d3",
-      "t": "一年一度的包书皮又开始了",
-      "heat": "1080.8万",
+      "t": "看看你的暑期社会实践",
+      "heat": "1081.0万",
       "track": "泛生活",
-      "link": "https://www.bing.com/search?q=%E4%B8%80%E5%B9%B4%E4%B8%80%E5%BA%A6%E7%9A%84%E5%8C%85%E4%B9%A6%E7%9A%AE%E5%8F%88%E5%BC%80%E5%A7%8B%E4%BA%86+%E6%8A%96%E9%9F%B3",
+      "link": "https://www.bing.com/search?q=%E7%9C%8B%E7%9C%8B%E4%BD%A0%E7%9A%84%E6%9A%91%E6%9C%9F%E7%A4%BE%E4%BC%9A%E5%AE%9E%E8%B7%B5+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
         778,
@@ -72,146 +72,112 @@
     },
     {
       "id": "d4",
-      "t": "用20万颗拼豆手搓20秒动画",
-      "heat": "1026.1万",
+      "t": "在宿舍的第一个晚上",
+      "heat": "1024.1万",
       "track": "泛生活",
-      "link": "https://www.bing.com/search?q=%E7%94%A820%E4%B8%87%E9%A2%97%E6%8B%BC%E8%B1%86%E6%89%8B%E6%90%9320%E7%A7%92%E5%8A%A8%E7%94%BB+%E6%8A%96%E9%9F%B3",
+      "link": "https://www.bing.com/search?q=%E5%9C%A8%E5%AE%BF%E8%88%8D%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%99%9A%E4%B8%8A+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        739,
-        787,
-        835,
-        882,
-        930,
-        978,
-        1026
+        737,
+        785,
+        833,
+        880,
+        928,
+        976,
+        1024
       ]
     },
     {
       "id": "d5",
-      "t": "开学互助指南",
-      "heat": "1024.9万",
-      "track": "心理学",
-      "link": "https://www.bing.com/search?q=%E5%BC%80%E5%AD%A6%E4%BA%92%E5%8A%A9%E6%8C%87%E5%8D%97+%E6%8A%96%E9%9F%B3",
+      "t": "厄尔尼诺将发展为超强级别",
+      "heat": "1023.9万",
+      "track": "新闻政策",
+      "link": "https://www.bing.com/search?q=%E5%8E%84%E5%B0%94%E5%B0%BC%E8%AF%BA%E5%B0%86%E5%8F%91%E5%B1%95%E4%B8%BA%E8%B6%85%E5%BC%BA%E7%BA%A7%E5%88%AB+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        738,
-        786,
-        834,
-        882,
-        929,
-        977,
-        1025
+        737,
+        785,
+        833,
+        880,
+        928,
+        976,
+        1024
       ]
     },
     {
       "id": "d6",
-      "t": "人会在自然里长出生命力",
-      "heat": "915.4万",
-      "track": "心理学",
-      "link": "https://www.bing.com/search?q=%E4%BA%BA%E4%BC%9A%E5%9C%A8%E8%87%AA%E7%84%B6%E9%87%8C%E9%95%BF%E5%87%BA%E7%94%9F%E5%91%BD%E5%8A%9B+%E6%8A%96%E9%9F%B3",
+      "t": "BLG 3:1 WE",
+      "heat": "913.8万",
+      "track": "体育行业",
+      "link": "https://www.bing.com/search?q=BLG%203%3A1%20WE+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        659,
-        702,
-        744,
-        787,
-        830,
-        872,
-        915
+        658,
+        701,
+        743,
+        786,
+        829,
+        871,
+        914
       ]
     },
     {
       "id": "d7",
-      "t": "大连开海仪式太震撼了",
-      "heat": "911.1万",
-      "track": "泛生活",
-      "link": "https://www.bing.com/search?q=%E5%A4%A7%E8%BF%9E%E5%BC%80%E6%B5%B7%E4%BB%AA%E5%BC%8F%E5%A4%AA%E9%9C%87%E6%92%BC%E4%BA%86+%E6%8A%96%E9%9F%B3",
+      "t": "中国全额缴纳2026年联合国会费",
+      "heat": "889.0万",
+      "track": "新闻政策",
+      "link": "https://www.bing.com/search?q=%E4%B8%AD%E5%9B%BD%E5%85%A8%E9%A2%9D%E7%BC%B4%E7%BA%B32026%E5%B9%B4%E8%81%94%E5%90%88%E5%9B%BD%E4%BC%9A%E8%B4%B9+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        656,
-        698,
-        741,
-        784,
-        826,
-        868,
-        911
+        640,
+        682,
+        723,
+        764,
+        806,
+        848,
+        889
       ]
     },
     {
       "id": "d8",
-      "t": "足协杯山东泰山0:3上海海港",
-      "heat": "908.7万",
-      "track": "体育行业",
-      "link": "https://www.bing.com/search?q=%E8%B6%B3%E5%8D%8F%E6%9D%AF%E5%B1%B1%E4%B8%9C%E6%B3%B0%E5%B1%B10%3A3%E4%B8%8A%E6%B5%B7%E6%B5%B7%E6%B8%AF+%E6%8A%96%E9%9F%B3",
+      "t": "外交部驳斥越南西沙群岛主权主张",
+      "heat": "879.4万",
+      "track": "新闻政策",
+      "link": "https://www.bing.com/search?q=%E5%A4%96%E4%BA%A4%E9%83%A8%E9%A9%B3%E6%96%A5%E8%B6%8A%E5%8D%97%E8%A5%BF%E6%B2%99%E7%BE%A4%E5%B2%9B%E4%B8%BB%E6%9D%83%E4%B8%BB%E5%BC%A0+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        654,
-        696,
-        739,
-        782,
-        824,
-        866,
-        909
+        633,
+        674,
+        715,
+        756,
+        797,
+        838,
+        879
       ]
     },
     {
       "id": "d9",
-      "t": "足协杯大连英博1:0上海申花",
-      "heat": "894.6万",
-      "track": "体育行业",
-      "link": "https://www.bing.com/search?q=%E8%B6%B3%E5%8D%8F%E6%9D%AF%E5%A4%A7%E8%BF%9E%E8%8B%B1%E5%8D%9A1%3A0%E4%B8%8A%E6%B5%B7%E7%94%B3%E8%8A%B1+%E6%8A%96%E9%9F%B3",
+      "t": "微信回应何时推出单删提示",
+      "heat": "878.1万",
+      "track": "数码行业",
+      "link": "https://www.bing.com/search?q=%E5%BE%AE%E4%BF%A1%E5%9B%9E%E5%BA%94%E4%BD%95%E6%97%B6%E6%8E%A8%E5%87%BA%E5%8D%95%E5%88%A0%E6%8F%90%E7%A4%BA+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        644,
-        686,
-        728,
-        770,
-        811,
-        853,
-        895
+        632,
+        673,
+        714,
+        755,
+        796,
+        837,
+        878
       ]
     },
     {
       "id": "d10",
-      "t": "北京国安3:1兰州陇原竞技",
-      "heat": "884.1万",
-      "track": "体育行业",
-      "link": "https://www.bing.com/search?q=%E5%8C%97%E4%BA%AC%E5%9B%BD%E5%AE%893%3A1%E5%85%B0%E5%B7%9E%E9%99%87%E5%8E%9F%E7%AB%9E%E6%8A%80+%E6%8A%96%E9%9F%B3",
-      "up": true,
-      "trend": [
-        636,
-        677,
-        719,
-        760,
-        801,
-        843,
-        884
-      ]
-    },
-    {
-      "id": "d11",
-      "t": "在镇江吃人气大排档",
-      "heat": "880.5万",
-      "track": "泛生活",
-      "link": "https://www.bing.com/search?q=%E5%9C%A8%E9%95%87%E6%B1%9F%E5%90%83%E4%BA%BA%E6%B0%94%E5%A4%A7%E6%8E%92%E6%A1%A3+%E6%8A%96%E9%9F%B3",
-      "up": true,
-      "trend": [
-        634,
-        675,
-        716,
-        758,
-        799,
-        840,
-        881
-      ]
-    },
-    {
-      "id": "d12",
-      "t": "云南12级台风致人伤亡系谣言",
-      "heat": "871.4万",
+      "t": "福州的雨势为何如此凶猛",
+      "heat": "870.8万",
       "track": "新闻政策",
-      "link": "https://www.bing.com/search?q=%E4%BA%91%E5%8D%9712%E7%BA%A7%E5%8F%B0%E9%A3%8E%E8%87%B4%E4%BA%BA%E4%BC%A4%E4%BA%A1%E7%B3%BB%E8%B0%A3%E8%A8%80+%E6%8A%96%E9%9F%B3",
+      "link": "https://www.bing.com/search?q=%E7%A6%8F%E5%B7%9E%E7%9A%84%E9%9B%A8%E5%8A%BF%E4%B8%BA%E4%BD%95%E5%A6%82%E6%AD%A4%E5%87%B6%E7%8C%9B+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
         627,
@@ -224,37 +190,71 @@
       ]
     },
     {
-      "id": "d13",
-      "t": "学功夫练武术",
-      "heat": "842.2万",
-      "track": "体育行业",
-      "link": "https://www.bing.com/search?q=%E5%AD%A6%E5%8A%9F%E5%A4%AB%E7%BB%83%E6%AD%A6%E6%9C%AF+%E6%8A%96%E9%9F%B3",
+      "id": "d11",
+      "t": "中国驻俄使馆发布赴俄留学提醒",
+      "heat": "839.4万",
+      "track": "新闻政策",
+      "link": "https://www.bing.com/search?q=%E4%B8%AD%E5%9B%BD%E9%A9%BB%E4%BF%84%E4%BD%BF%E9%A6%86%E5%8F%91%E5%B8%83%E8%B5%B4%E4%BF%84%E7%95%99%E5%AD%A6%E6%8F%90%E9%86%92+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        606,
-        645,
-        685,
-        724,
-        763,
-        803,
-        842
+        604,
+        643,
+        682,
+        722,
+        761,
+        800,
+        839
+      ]
+    },
+    {
+      "id": "d12",
+      "t": "万物皆可贴秋膘",
+      "heat": "828.9万",
+      "track": "泛生活",
+      "link": "https://www.bing.com/search?q=%E4%B8%87%E7%89%A9%E7%9A%86%E5%8F%AF%E8%B4%B4%E7%A7%8B%E8%86%98+%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        597,
+        636,
+        674,
+        713,
+        752,
+        790,
+        829
+      ]
+    },
+    {
+      "id": "d13",
+      "t": "全员进入Luke穿搭时代",
+      "heat": "786.3万",
+      "track": "泛生活",
+      "link": "https://www.bing.com/search?q=%E5%85%A8%E5%91%98%E8%BF%9B%E5%85%A5Luke%E7%A9%BF%E6%90%AD%E6%97%B6%E4%BB%A3+%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        566,
+        603,
+        639,
+        676,
+        713,
+        749,
+        786
       ]
     },
     {
       "id": "d14",
-      "t": "开学第一课",
-      "heat": "782.0万",
-      "track": "新闻政策",
-      "link": "https://www.bing.com/search?q=%E5%BC%80%E5%AD%A6%E7%AC%AC%E4%B8%80%E8%AF%BE+%E6%8A%96%E9%9F%B3",
+      "t": "开学版井柏然进行曲",
+      "heat": "779.8万",
+      "track": "泛生活",
+      "link": "https://www.bing.com/search?q=%E5%BC%80%E5%AD%A6%E7%89%88%E4%BA%95%E6%9F%8F%E7%84%B6%E8%BF%9B%E8%A1%8C%E6%9B%B2+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        563,
-        600,
-        636,
-        672,
-        709,
-        746,
-        782
+        562,
+        598,
+        635,
+        671,
+        707,
+        744,
+        780
       ]
     }
   ]
