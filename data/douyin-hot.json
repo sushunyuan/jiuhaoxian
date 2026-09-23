@@ -1,132 +1,166 @@
 {
-  "updated": "2026-09-15T23:05:17.550489+08:00",
-  "source": "每日自动化抓取（抖音热搜榜，Bing 搜索跳转）",
+  "updated": "2026-09-24T00:17:50.308007+08:00",
+  "source": "每日自动化抓取（抖音热搜榜，60s API，Bing 搜索跳转）",
   "douyin": [
     {
       "id": "d0",
-      "t": "中国男篮四分之一决赛将战沙特",
-      "heat": "1182.6万",
-      "track": "体育行业",
-      "link": "https://www.bing.com/search?q=%E4%B8%AD%E5%9B%BD%E7%94%B7%E7%AF%AE%E5%9B%9B%E5%88%86%E4%B9%8B%E4%B8%80%E5%86%B3%E8%B5%9B%E5%B0%86%E6%88%98%E6%B2%99%E7%89%B9+%E6%8A%96%E9%9F%B3",
+      "t": "习近平离京对美国进行国事访问",
+      "heat": "1141.3万",
+      "track": "新闻政策",
+      "link": "https://www.bing.com/search?q=%E4%B9%A0%E8%BF%91%E5%B9%B3%E7%A6%BB%E4%BA%AC%E5%AF%B9%E7%BE%8E%E5%9B%BD%E8%BF%9B%E8%A1%8C%E5%9B%BD%E4%BA%8B%E8%AE%BF%E9%97%AE+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        852,
-        907,
-        962,
-        1018,
-        1073,
-        1128,
-        1183
+        822,
+        875,
+        928,
+        981,
+        1035,
+        1088,
+        1141
       ]
     },
     {
       "id": "d1",
-      "t": "25号台风\"杜鹃\"未来或将趋向日本",
-      "heat": "1118.2万",
-      "track": "新闻政策",
-      "link": "https://www.bing.com/search?q=25%E5%8F%B7%E5%8F%B0%E9%A3%8E%22%E6%9D%9C%E9%B9%83%22%E6%9C%AA%E6%9D%A5%E6%88%96%E5%B0%86%E8%B6%8B%E5%90%91%E6%97%A5%E6%9C%AC+%E6%8A%96%E9%9F%B3",
+      "t": "张展硕200自破纪录夺冠",
+      "heat": "1138.4万",
+      "track": "体育行业",
+      "link": "https://www.bing.com/search?q=%E5%BC%A0%E5%B1%95%E7%A1%95200%E8%87%AA%E7%A0%B4%E7%BA%AA%E5%BD%95%E5%A4%BA%E5%86%A0+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        805,
-        857,
-        909,
-        962,
-        1014,
-        1066,
-        1118
+        820,
+        873,
+        926,
+        979,
+        1032,
+        1085,
+        1138
       ]
     },
     {
       "id": "d2",
-      "t": "2026年国家网络安全宣传周",
-      "heat": "1109.8万",
+      "t": "第五届数贸会亮点抢先看",
+      "heat": "1120.2万",
       "track": "新闻政策",
-      "link": "https://www.bing.com/search?q=2026%E5%B9%B4%E5%9B%BD%E5%AE%B6%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%A3%E4%BC%A0%E5%91%A8+%E6%8A%96%E9%9F%B3",
+      "link": "https://www.bing.com/search?q=%E7%AC%AC%E4%BA%94%E5%B1%8A%E6%95%B0%E8%B4%B8%E4%BC%9A%E4%BA%AE%E7%82%B9%E6%8A%A2%E5%85%88%E7%9C%8B+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        799,
-        851,
-        903,
-        954,
-        1006,
-        1058,
-        1110
+        807,
+        859,
+        911,
+        963,
+        1016,
+        1068,
+        1120
       ]
     },
     {
       "id": "d3",
-      "t": "特种兵玩家准备开启快闪模式",
-      "heat": "1106.3万",
-      "track": "泛生活",
-      "link": "https://www.bing.com/search?q=%E7%89%B9%E7%A7%8D%E5%85%B5%E7%8E%A9%E5%AE%B6%E5%87%86%E5%A4%87%E5%BC%80%E5%90%AF%E5%BF%AB%E9%97%AA%E6%A8%A1%E5%BC%8F+%E6%8A%96%E9%9F%B3",
+      "t": "U23国足小组第一出线",
+      "heat": "1113.4万",
+      "track": "体育行业",
+      "link": "https://www.bing.com/search?q=U23%E5%9B%BD%E8%B6%B3%E5%B0%8F%E7%BB%84%E7%AC%AC%E4%B8%80%E5%87%BA%E7%BA%BF+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        796,
-        848,
-        899,
-        951,
-        1003,
-        1054,
-        1106
+        802,
+        854,
+        906,
+        958,
+        1009,
+        1061,
+        1113
       ]
     },
     {
       "id": "d4",
-      "t": "亚冠上海海港6:4胜拉查武里",
-      "heat": "1044.6万",
-      "track": "体育行业",
-      "link": "https://www.bing.com/search?q=%E4%BA%9A%E5%86%A0%E4%B8%8A%E6%B5%B7%E6%B5%B7%E6%B8%AF6%3A4%E8%83%9C%E6%8B%89%E6%9F%A5%E6%AD%A6%E9%87%8C+%E6%8A%96%E9%9F%B3",
+      "t": "万物皆可闪身步",
+      "heat": "1055.4万",
+      "track": "泛生活",
+      "link": "https://www.bing.com/search?q=%E4%B8%87%E7%89%A9%E7%9A%86%E5%8F%AF%E9%97%AA%E8%BA%AB%E6%AD%A5+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        752,
-        801,
-        850,
-        898,
-        947,
-        996,
-        1045
+        760,
+        809,
+        858,
+        908,
+        957,
+        1006,
+        1055
       ]
     },
     {
       "id": "d5",
-      "t": "CS Major再度落地上海",
-      "heat": "1039.3万",
-      "track": "体育行业",
-      "link": "https://www.bing.com/search?q=CS%20Major%E5%86%8D%E5%BA%A6%E8%90%BD%E5%9C%B0%E4%B8%8A%E6%B5%B7+%E6%8A%96%E9%9F%B3",
+      "t": "今日秋分",
+      "heat": "1053.7万",
+      "track": "新闻政策",
+      "link": "https://www.bing.com/search?q=%E4%BB%8A%E6%97%A5%E7%A7%8B%E5%88%86+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        748,
-        796,
-        845,
-        894,
-        942,
-        990,
-        1039
+        759,
+        808,
+        857,
+        906,
+        955,
+        1005,
+        1054
       ]
     },
     {
       "id": "d6",
-      "t": "北京香山论坛今日举行",
-      "heat": "929.8万",
-      "track": "新闻政策",
-      "link": "https://www.bing.com/search?q=%E5%8C%97%E4%BA%AC%E9%A6%99%E5%B1%B1%E8%AE%BA%E5%9D%9B%E4%BB%8A%E6%97%A5%E4%B8%BE%E8%A1%8C+%E6%8A%96%E9%9F%B3",
+      "t": "纯过日子就是记录一餐一饭",
+      "heat": "941.7万",
+      "track": "泛生活",
+      "link": "https://www.bing.com/search?q=%E7%BA%AF%E8%BF%87%E6%97%A5%E5%AD%90%E5%B0%B1%E6%98%AF%E8%AE%B0%E5%BD%95%E4%B8%80%E9%A4%90%E4%B8%80%E9%A5%AD+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        670,
-        713,
-        757,
-        800,
-        843,
-        887,
-        930
+        678,
+        722,
+        766,
+        810,
+        854,
+        898,
+        942
       ]
     },
     {
       "id": "d7",
-      "t": "李在明支持率连续9周下滑",
-      "heat": "929.3万",
+      "t": "年轻人的中秋风物志",
+      "heat": "938.2万",
+      "track": "泛生活",
+      "link": "https://www.bing.com/search?q=%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9A%84%E4%B8%AD%E7%A7%8B%E9%A3%8E%E7%89%A9%E5%BF%97+%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        675,
+        719,
+        763,
+        807,
+        851,
+        894,
+        938
+      ]
+    },
+    {
+      "id": "d8",
+      "t": "中国农民丰收节看丰收底气",
+      "heat": "933.2万",
       "track": "新闻政策",
-      "link": "https://www.bing.com/search?q=%E6%9D%8E%E5%9C%A8%E6%98%8E%E6%94%AF%E6%8C%81%E7%8E%87%E8%BF%9E%E7%BB%AD9%E5%91%A8%E4%B8%8B%E6%BB%91+%E6%8A%96%E9%9F%B3",
+      "link": "https://www.bing.com/search?q=%E4%B8%AD%E5%9B%BD%E5%86%9C%E6%B0%91%E4%B8%B0%E6%94%B6%E8%8A%82%E7%9C%8B%E4%B8%B0%E6%94%B6%E5%BA%95%E6%B0%94+%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        672,
+        715,
+        759,
+        803,
+        846,
+        890,
+        933
+      ]
+    },
+    {
+      "id": "d9",
+      "t": "带你第一视角体验洱海渔灯",
+      "heat": "928.9万",
+      "track": "泛生活",
+      "link": "https://www.bing.com/search?q=%E5%B8%A6%E4%BD%A0%E7%AC%AC%E4%B8%80%E8%A7%86%E8%A7%92%E4%BD%93%E9%AA%8C%E6%B4%B1%E6%B5%B7%E6%B8%94%E7%81%AF+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
         669,
@@ -139,122 +173,88 @@
       ]
     },
     {
-      "id": "d8",
-      "t": "需要浇水才能长出的拼豆绿植",
-      "heat": "927.2万",
-      "track": "泛生活",
-      "link": "https://www.bing.com/search?q=%E9%9C%80%E8%A6%81%E6%B5%87%E6%B0%B4%E6%89%8D%E8%83%BD%E9%95%BF%E5%87%BA%E7%9A%84%E6%8B%BC%E8%B1%86%E7%BB%BF%E6%A4%8D+%E6%8A%96%E9%9F%B3",
-      "up": true,
-      "trend": [
-        667,
-        710,
-        754,
-        797,
-        840,
-        884,
-        927
-      ]
-    },
-    {
-      "id": "d9",
-      "t": "米兰集市1欧淘衣太快乐了",
-      "heat": "919.6万",
-      "track": "泛生活",
-      "link": "https://www.bing.com/search?q=%E7%B1%B3%E5%85%B0%E9%9B%86%E5%B8%821%E6%AC%A7%E6%B7%98%E8%A1%A3%E5%A4%AA%E5%BF%AB%E4%B9%90%E4%BA%86+%E6%8A%96%E9%9F%B3",
-      "up": true,
-      "trend": [
-        662,
-        705,
-        748,
-        791,
-        834,
-        877,
-        920
-      ]
-    },
-    {
       "id": "d10",
-      "t": "时尚主播们集结出招了",
-      "heat": "918.3万",
+      "t": "提前预定中秋节文案",
+      "heat": "922.8万",
       "track": "泛生活",
-      "link": "https://www.bing.com/search?q=%E6%97%B6%E5%B0%9A%E4%B8%BB%E6%92%AD%E4%BB%AC%E9%9B%86%E7%BB%93%E5%87%BA%E6%8B%9B%E4%BA%86+%E6%8A%96%E9%9F%B3",
+      "link": "https://www.bing.com/search?q=%E6%8F%90%E5%89%8D%E9%A2%84%E5%AE%9A%E4%B8%AD%E7%A7%8B%E8%8A%82%E6%96%87%E6%A1%88+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        661,
-        704,
-        747,
-        790,
-        832,
-        875,
-        918
+        664,
+        707,
+        751,
+        794,
+        837,
+        880,
+        923
       ]
     },
     {
       "id": "d11",
-      "t": "国庆穿搭开始预备",
-      "heat": "915.7万",
+      "t": "国庆穿什么",
+      "heat": "910.5万",
       "track": "泛生活",
-      "link": "https://www.bing.com/search?q=%E5%9B%BD%E5%BA%86%E7%A9%BF%E6%90%AD%E5%BC%80%E5%A7%8B%E9%A2%84%E5%A4%87+%E6%8A%96%E9%9F%B3",
+      "link": "https://www.bing.com/search?q=%E5%9B%BD%E5%BA%86%E7%A9%BF%E4%BB%80%E4%B9%88+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
-        660,
-        703,
-        745,
-        788,
-        831,
-        873,
-        916
+        656,
+        698,
+        741,
+        783,
+        826,
+        868,
+        911
       ]
     },
     {
       "id": "d12",
-      "t": "苹果客服称不建议老机型升iOS27",
-      "heat": "912.8万",
-      "track": "数码行业",
-      "link": "https://www.bing.com/search?q=%E8%8B%B9%E6%9E%9C%E5%AE%A2%E6%9C%8D%E7%A7%B0%E4%B8%8D%E5%BB%BA%E8%AE%AE%E8%80%81%E6%9C%BA%E5%9E%8B%E5%8D%87iOS27+%E6%8A%96%E9%9F%B3",
-      "up": true,
-      "trend": [
-        657,
-        700,
-        742,
-        785,
-        828,
-        870,
-        913
-      ]
-    },
-    {
-      "id": "d13",
-      "t": "赵家驹巨人之旅抽空发了条抖音",
-      "heat": "902.6万",
+      "t": "各地月饼品鉴师已上线",
+      "heat": "901.9万",
       "track": "泛生活",
-      "link": "https://www.bing.com/search?q=%E8%B5%B5%E5%AE%B6%E9%A9%B9%E5%B7%A8%E4%BA%BA%E4%B9%8B%E6%97%85%E6%8A%BD%E7%A9%BA%E5%8F%91%E4%BA%86%E6%9D%A1%E6%8A%96%E9%9F%B3+%E6%8A%96%E9%9F%B3",
-      "up": true,
-      "trend": [
-        650,
-        692,
-        734,
-        776,
-        819,
-        861,
-        903
-      ]
-    },
-    {
-      "id": "d14",
-      "t": "iOS27表现如何",
-      "heat": "900.8万",
-      "track": "数码行业",
-      "link": "https://www.bing.com/search?q=iOS27%E8%A1%A8%E7%8E%B0%E5%A6%82%E4%BD%95+%E6%8A%96%E9%9F%B3",
+      "link": "https://www.bing.com/search?q=%E5%90%84%E5%9C%B0%E6%9C%88%E9%A5%BC%E5%93%81%E9%89%B4%E5%B8%88%E5%B7%B2%E4%B8%8A%E7%BA%BF+%E6%8A%96%E9%9F%B3",
       "up": true,
       "trend": [
         649,
         691,
-        733,
-        775,
-        817,
-        859,
-        901
+        734,
+        776,
+        818,
+        860,
+        902
+      ]
+    },
+    {
+      "id": "d13",
+      "t": "带你看看诗词里的中秋",
+      "heat": "897.0万",
+      "track": "泛生活",
+      "link": "https://www.bing.com/search?q=%E5%B8%A6%E4%BD%A0%E7%9C%8B%E7%9C%8B%E8%AF%97%E8%AF%8D%E9%87%8C%E7%9A%84%E4%B8%AD%E7%A7%8B+%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        646,
+        688,
+        730,
+        771,
+        813,
+        855,
+        897
+      ]
+    },
+    {
+      "id": "d14",
+      "t": "中秋和月亮合个影吧",
+      "heat": "893.3万",
+      "track": "泛生活",
+      "link": "https://www.bing.com/search?q=%E4%B8%AD%E7%A7%8B%E5%92%8C%E6%9C%88%E4%BA%AE%E5%90%88%E4%B8%AA%E5%BD%B1%E5%90%A7+%E6%8A%96%E9%9F%B3",
+      "up": true,
+      "trend": [
+        643,
+        685,
+        727,
+        768,
+        810,
+        852,
+        893
       ]
     }
   ]
