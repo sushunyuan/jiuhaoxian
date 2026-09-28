@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-25T23:11:50.639774+08:00",
-  "source": "实时抓取校验：urllib 直连 60s.viki.moe 返回 500；经 WebFetch 直连 60s-api.viki.moe 取得官方热搜榜（code 200），top15 与既有 60s-api 真实快照（2026-09-24）完全一致，数据有效 · Bing搜索跳转",
+  "updated": "2026-09-29T00:18:34.179516+08:00",
+  "source": "实时抓取校验：经 WebFetch 直连 60s-api.viki.moe/v2/rednote 取得官方热搜榜（code 200），top15 与既有 60s-api 真实快照完全一致（官方榜单本轮未轮动），数据有效 · Bing搜索跳转",
   "xhs": [
     {
       "id": "x0",
